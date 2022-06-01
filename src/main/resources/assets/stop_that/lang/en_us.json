@@ -1,0 +1,11 @@
+{
+    "config.stop_that.title": "Stop-That Configuration",
+
+    "config.stop_that.allow_log_stripping": "Allow Log stripping:",
+    "config.stop_that.allow_berry_placing": "Allow Berry-Placing:",
+    "config.stop_that.hit_grass_with_sword": "Allow breaking Grass with Swords:",
+
+    "config.stop_that.always": "Always",
+    "config.stop_that.never": "Never",
+    "config.stop_that.sneaking": "When sneaking"
+}
