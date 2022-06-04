@@ -21,12 +21,11 @@
         "stop_that.mixins.json"
     ],
     "depends": {
-        "fabricloader": ">=0.14.6",
         "fabric": "*",
-        "minecraft": "1.18.2"
+        "minecraft": "1.18.x"
     },
     "recommends": {
-        "modmenu": ">=3.2.2",
-        "cloth-config": ">=6.2.62"
+        "modmenu": "*",
+        "cloth-config": "*"
     }
 }

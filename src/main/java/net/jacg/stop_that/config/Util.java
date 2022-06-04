@@ -5,11 +5,14 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import net.fabricmc.loader.api.FabricLoader;
 import net.jacg.stop_that.StopThatClient;
+import net.minecraft.entity.player.PlayerEntity;
 
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+
+import static net.jacg.stop_that.StopThatClient.CONFIG;
 
 public class Util {
     public static void saveConfig() {
@@ -19,7 +22,7 @@ public class Util {
                     .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
                     .setPrettyPrinting()
                     .create();
-            writer.write(gson.toJson(StopThatClient.CONFIG));
+            writer.write(gson.toJson(CONFIG));
 
         }
         catch (IOException e) {
@@ -40,5 +43,9 @@ public class Util {
             }
         }
         return new Config();
+    }
+
+    public static boolean checkCondition(Config.AllowWhen allowWhen, PlayerEntity player) {
+        return allowWhen == Config.AllowWhen.SNEAKING ? !player.isSneaking() : allowWhen == Config.AllowWhen.NEVER;
     }
 }

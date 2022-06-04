@@ -31,21 +31,27 @@ public class StopThatModMenu implements ModMenuApi {
             ConfigCategory configCategory = builder.getOrCreateCategory(new TranslatableText("config.stop_that.general"));
 
             configCategory.addEntry(entryBuilder.startEnumSelector(new TranslatableText("config.stop_that.allow_log_stripping"), AllowWhen.class, CONFIG.isLogStrippingAllowed)
-                    .setDefaultValue(AllowWhen.SNEAKING)
+                    .setDefaultValue(AllowWhen.ALWAYS)
                     .setEnumNameProvider(StopThatModMenu::getName)
                     .setSaveConsumer(newValue -> CONFIG.isLogStrippingAllowed = newValue)
                     .build());
 
             configCategory.addEntry(entryBuilder.startEnumSelector(new TranslatableText("config.stop_that.allow_berry_placing"), AllowWhen.class, CONFIG.isBerryPlacingAllowed)
-                    .setDefaultValue(AllowWhen.SNEAKING)
+                    .setDefaultValue(AllowWhen.ALWAYS)
                     .setEnumNameProvider(StopThatModMenu::getName)
                     .setSaveConsumer(newValue -> CONFIG.isBerryPlacingAllowed = newValue)
                     .build());
 
             configCategory.addEntry(entryBuilder.startEnumSelector(new TranslatableText("config.stop_that.hit_grass_with_sword"), AllowWhen.class, CONFIG.swordHitGrassAllowed)
-                    .setDefaultValue(AllowWhen.SNEAKING)
+                    .setDefaultValue(AllowWhen.ALWAYS)
                     .setEnumNameProvider(StopThatModMenu::getName)
                     .setSaveConsumer(newValue -> CONFIG.swordHitGrassAllowed = newValue)
+                    .build());
+
+            configCategory.addEntry(entryBuilder.startEnumSelector(new TranslatableText("config.stop_that.allow_wrong_tool"), AllowWhen.class, CONFIG.blockBreakingWrongToolAllowed)
+                    .setDefaultValue(AllowWhen.ALWAYS)
+                    .setEnumNameProvider(StopThatModMenu::getName)
+                    .setSaveConsumer(newValue -> CONFIG.blockBreakingWrongToolAllowed = newValue)
                     .build());
 
             builder.setSavingRunnable(Util::saveConfig);
