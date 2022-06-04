@@ -1,5 +1,5 @@
 # Stop That!
-*Stop That!* is a client-side mod that tries to make some of the more annoying aspects of the game and make them configurable!
+*Stop That!* is a client-side mod that tries to make some of the more annoying aspects of the game tolerable and make them configurable!
 
 Currently, it changes following annoying things:
 - Accidental Log-Stripping with axes
@@ -14,4 +14,4 @@ Currently, it changes following annoying things:
 
 and recommends
 - any version of [Mod Menu](https://www.curseforge.com/minecraft/mc-mods/modmenu)
-- [Cloth Config](https://www.curseforge.com/minecraft/mc-mods/cloth-config) versions 6.2.62 and up
+- any version of [Cloth Config](https://www.curseforge.com/minecraft/mc-mods/cloth-config)
